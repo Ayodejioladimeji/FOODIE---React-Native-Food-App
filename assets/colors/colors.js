@@ -4,7 +4,8 @@ const colors = {
     primary:'green',
     secondary:'blue',
     textLight:'#cdcdcd',
-    price:'#e4723c'
+    price:'#e4723c',
+    white:'#fff'
 }
 
 export default colors
