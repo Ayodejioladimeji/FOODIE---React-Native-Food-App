@@ -7,6 +7,7 @@ import {
   Image,
   TextInput,
   FlatList,
+  ScrollView,
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
@@ -16,7 +17,8 @@ import categoriesData from "./common/categoryData";
 const Homescreen = () => {
   const renderCategoryItem = ({ item }) => {
     return (
-      <View style={[styles.categoryView, 
+      <ScrollView contentInsetAdjustmentBehavior="automatic" showsHorizontalScrollIndicator={false}>
+        <View style={[styles.categoryView, 
       {backgroundColor:item.selected ? colors.primary : colors.white}]}>
         <Image style={styles.categoryImage} source={item.image} />
         <Text style={[styles.categoryText, {
@@ -33,12 +35,14 @@ const Homescreen = () => {
           />
         </View>
       </View>
+      </ScrollView>
     );
   };
 
   return (
     <View style={styles.container}>
-      {/* Header */}
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
+        {/* Header */}
       <SafeAreaView>
         <View style={styles.header}>
           <Image
@@ -81,6 +85,7 @@ const Homescreen = () => {
           horizontal={true}
         />
       </View>
+      </ScrollView>
     </View>
   );
 };
